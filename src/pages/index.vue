@@ -11,9 +11,8 @@ const waitlistMsg = ref(null)
 const apkUrl = import.meta.env.VITE_APK_URL || '/dropzone.apk'
 
 function handleDownload() {
-  // for analytics you can call your own endpoint here
-  // trigger immediate navigation to the apk url
-  window.location.href = apkUrl
+  // Optionally call your analytics endpoint here before redirecting
+  window.location.href = apkUrl // Trigger immediate navigation to the APK
 }
 
 function openNotifyModal() {
@@ -79,42 +78,43 @@ watch(() => store.userCount, (v) => {
 <template>
   <main class="bg-gradient-to-b text-slate-900 min-h-screen from-white to-slate-50">
     <!-- NAV -->
-    <nav class="mx-auto px-5 py-4 flex max-w-4xl items-center justify-between">
+    <nav class="mx-auto px-5 py-4 flex items-center justify-between">
       <div class="flex gap-3 items-center">
         <div class="bg-gradient-to-r text-white font-bold rounded-lg flex h-10 w-10 items-center justify-center from-indigo-500 to-pink-500">
           DZ
         </div>
         <div>
-          <div class="text-sm font-semibold">
+          <div class="text-sm text-light-50 font-semibold">
             DropZone
           </div>
-          <div class="text-xs text-slate-500">
+          <div class="text-xs text-slate-200">
             Social — local drops
           </div>
         </div>
       </div>
-      <div class="gap-3 hidden items-center sm:flex">
+      <div class="text-light-50 gap-3 hidden items-center sm:flex">
         <a class="text-sm" href="#features">Features</a>
         <a class="text-sm" href="#download">Download</a>
       </div>
     </nav>
 
     <!-- HERO -->
-    <section class="mx-auto px-5 py-8 flex flex-col gap-6 max-w-4xl items-start">
-      <h1 class="text-3xl leading-tight font-extrabold sm:text-5xl">
-        DropZone — Share what's happening around you
+    <section class="mx-auto px-5 py-8 flex flex-col gap-6 max-w-4xl items-start xl:ps-50">
+      <h1 class="text-3xl text-light-50 leading-tight font-extrabold sm:text-6xl">
+        DropZone
       </h1>
-      <p class="text-lg text-slate-600 max-w-xl">
-        A fast, local-first social app for drops — posts, alerts and happenings in your town. Mobile-first, lightweight, and private.
+      <p class="text-lg text-slate-100 text-start max-w-xl sm:text-xl">
+        A fresh take on social media — built for the way you connect.
+        Share Quick photos or video, write heartfelt letters or notes, chat and exchange posts or articles.
       </p>
 
       <div class="flex flex-col gap-3 w-full items-center sm:flex-row">
         <div class="flex gap-3 w-full sm:w-auto">
           <a
             :href="apkUrl"
-            class="text-white font-medium px-5 py-3 rounded-lg bg-indigo-600 inline-flex shadow-md items-center justify-center hover:opacity-95"
+            class="text-white font-medium px-5 py-3 rounded-lg bg-black inline-flex shadow-md items-center justify-center hover:opacity-95"
             @click.prevent="handleDownload"
-          >Download Android APK</a>
+          >Download for Android</a>
 
           <button class="text-sm px-4 py-3 border border-slate-200 rounded-lg bg-white inline-flex items-center justify-center" @click="openNotifyModal">
             iOS — Notify me
@@ -122,11 +122,11 @@ watch(() => store.userCount, (v) => {
         </div>
 
         <div class="ml-auto mt-3 flex gap-3 items-center sm:mt-0">
-          <div class="text-xs text-slate-500">
-            Active users (approx.)
-          </div>
           <div class="font-semibold px-3 py-2 rounded-lg bg-white shadow-sm">
             <span class="text-xl">{{ animatedCount }}</span>
+          </div>
+          <div class="text-xs text-slate-50">
+            Users
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ watch(() => store.userCount, (v) => {
     </section>
 
     <!-- FEATURES -->
-    <section id="features" class="mx-auto px-5 py-8 max-w-4xl">
+    <!-- <section id="features" class="mx-auto px-5 py-8 max-w-4xl">
       <h2 class="text-xl font-bold mb-4">
         Why DropZone?
       </h2>
@@ -153,7 +153,7 @@ watch(() => store.userCount, (v) => {
             Low-data & fast
           </h3>
           <p class="text-sm text-slate-600">
-            Optimised for mobile connections and small devices.
+            Optimized for mobile connections and small devices.
           </p>
         </li>
         <li class="p-4 rounded-lg bg-white shadow-sm">
@@ -173,10 +173,10 @@ watch(() => store.userCount, (v) => {
           </p>
         </li>
       </ul>
-    </section>
+    </section> -->
 
     <!-- DOWNLOAD & FAQ -->
-    <section id="download" class="mx-auto px-5 py-8 max-w-4xl">
+    <!-- <section id="download" class="mx-auto px-5 py-8 max-w-4xl">
       <h2 class="text-xl font-bold mb-4">
         Download & install
       </h2>
@@ -191,10 +191,10 @@ watch(() => store.userCount, (v) => {
           <strong>Note:</strong> We recommend you host the APK on your own storage (e.g. Supabase Storage, S3, or your server) and keep the URL in <code>VITE_APK_URL</code>.
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- FOOTER + small print -->
-    <footer class="text-sm text-slate-500 mx-auto px-5 py-8 max-w-4xl">
+    <footer class="text-sm text-slate-100 mx-auto px-5 py-8 max-w-4xl">
       <div class="flex flex-col gap-4 items-start justify-between sm:flex-row">
         <div>
           &copy; DropZone — Built for communities. <br>
