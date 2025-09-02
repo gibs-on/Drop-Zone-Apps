@@ -6,7 +6,7 @@ body,
   padding: 0;
   background-image: url('/background.png'); /* no @, starts with / */
   background-size: cover;
-  background-position: center;
+  background-position: end;
 }
 
 html.dark {
