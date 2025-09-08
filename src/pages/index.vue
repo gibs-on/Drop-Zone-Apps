@@ -80,15 +80,16 @@ watch(() => store.userCount, (v) => {
     <!-- NAV -->
     <nav class="mx-auto px-5 py-4 flex items-center justify-between">
       <div class="flex gap-3 items-center">
-        <div class="bg-gradient-to-r text-white font-bold rounded-lg flex h-10 w-10 items-center justify-center from-indigo-500 to-pink-500">
+        <!-- <div class="bg-gradient-to-r text-white font-bold rounded-lg flex h-10 w-10 items-center justify-center from-indigo-500 to-pink-500">
           DZ
-        </div>
+        </div> -->
+        <img src="/favicon.svg" alt="Logo" class="h-10 w-10">
         <div>
           <div class="text-sm text-light-50 font-semibold">
             DropZone
           </div>
-          <div class="text-xs text-slate-200">
-            Social — local drops
+          <div class="text-xs text-slate-300">
+            DROP | DISCOVER | CONNECT
           </div>
         </div>
       </div>
@@ -103,27 +104,33 @@ watch(() => store.userCount, (v) => {
       <h1 class="text-3xl text-light-50 leading-tight font-extrabold sm:text-6xl">
         DropZone
       </h1>
-      <p class="text-lg text-slate-100 text-start max-w-xl sm:text-xl">
+      <p class="text-sm text-slate-100 text-start max-w-xl md:text-base">
         A fresh take on social media — built for the way you connect.
         Share Quick photos or video, write heartfelt letters or notes, chat and exchange posts or articles.
       </p>
 
-      <div class="flex flex-col gap-3 w-full items-center sm:flex-row">
-        <div class="flex gap-3 w-full sm:w-auto">
+      <div class="flex flex-col gap-3 w-full sm:flex-row">
+        <div class="flex flex-col gap-3 sm:flex-row">
           <a
             :href="apkUrl"
-            class="text-white font-medium px-5 py-3 rounded-lg bg-black inline-flex shadow-md items-center justify-center hover:opacity-95"
+            class="text-white font-medium px-5 py-3 rounded-lg bg-black inline-flex gap-2 shadow-md items-center justify-center hover:opacity-95"
             @click.prevent="handleDownload"
-          >Download for Android</a>
+          >
+            <img src="/android_logo.png" alt="Android" class="h-5 w-5">
+            Download for Android
+          </a>
 
-          <button class="text-sm px-4 py-3 border border-slate-200 rounded-lg bg-white inline-flex items-center justify-center" @click="openNotifyModal">
+          <button
+            class="text-sm px-4 py-3 border border-slate-200 rounded-lg bg-white inline-flex items-center justify-center"
+            @click="openNotifyModal"
+          >
             iOS — Notify me
           </button>
         </div>
 
-        <div class="ml-auto mt-3 flex gap-3 items-center sm:mt-0">
-          <div class="font-semibold px-3 py-2 rounded-lg bg-white shadow-sm">
-            <span class="text-xl">{{ animatedCount }}</span>
+        <div class="flex gap-1 items-baseline sm:ml-auto sm:flex-row">
+          <div class="font-semibold px-3 py-2">
+            <span class="text-bold text-3xl text-white">{{ animatedCount }}</span>
           </div>
           <div class="text-xs text-slate-50">
             Users
@@ -131,7 +138,7 @@ watch(() => store.userCount, (v) => {
         </div>
       </div>
 
-      <img class="border border-slate-100 rounded-xl w-full shadow-md sm:w-2/3" src="/background.png" alt="app screenshot">
+      <img class="border border-slate-100 rounded-xl w-full shadow-md sm:w-2/3" src="/cover_photo.png" alt="app screenshot">
     </section>
 
     <!-- FEATURES -->
@@ -219,7 +226,7 @@ watch(() => store.userCount, (v) => {
         <form class="mt-4" @submit.prevent="submitWaitlist">
           <input v-model="email" type="email" required placeholder="you@domain.com" class="p-3 border rounded-md w-full">
           <div class="mt-3 flex gap-2 items-center">
-            <button class="text-white px-4 py-2 rounded-md bg-indigo-600">
+            <button class="text-white px-4 py-2 rounded-md bg-[#B39254]">
               Notify me
             </button>
             <button type="button" class="px-3 py-2 border rounded-md" @click="closeNotify">
