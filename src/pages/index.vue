@@ -85,8 +85,11 @@ watch(() => store.userCount, (v) => {
         </div> -->
         <img src="/favicon.svg" alt="Logo" class="h-10 w-10">
         <div>
-          <div class="text-sm text-light-50 font-semibold">
+          <div class="text-sm text-light-50 font-semibold flex gap-2 items-center">
             DropZone
+            <span class="text-[10px] text-white tracking-wider font-bold px-2 py-0.5 rounded-full bg-blue-500 uppercase">
+              Beta
+            </span>
           </div>
           <div class="text-xs text-slate-300">
             DROP | DISCOVER | CONNECT
