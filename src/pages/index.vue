@@ -138,7 +138,7 @@ watch(() => store.userCount, (v) => {
         </div>
       </div>
 
-      <img class="border border-slate-100 rounded-xl w-full shadow-md sm:w-2/3" src="/cover_photo.png" alt="app screenshot">
+      <img class="border border-slate-100 rounded-xl w-full shadow-md sm:w-2/3" src="/cover_photo.jpg" alt="app screenshot">
     </section>
 
     <!-- FEATURES -->
