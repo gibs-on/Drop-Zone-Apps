@@ -8,7 +8,7 @@ const showNotify = ref(false)
 const email = ref('')
 const waitlistMsg = ref(null)
 
-const apkUrl = import.meta.env.VITE_APK_URL || '/dropzone.apk'
+const apkUrl = import.meta.env.VITE_APK_URL || '/dropzone-v1.0.1.apk'
 
 function handleDownload() {
   // Optionally call your analytics endpoint here before redirecting
